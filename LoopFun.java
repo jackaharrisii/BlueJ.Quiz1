@@ -37,6 +37,7 @@ public class LoopFun
             }
           return output;
           //this won't work with hyphenated phrases if the user wants both letters in the acronym
+          //determine how the client wants to handle hyphens before modifying code
       }
 
       /**
@@ -52,7 +53,10 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          //tried nested for loops first, then tried a switch
+          //tried nested for loops first, then tried a switch, but the code was getting too complicated
+          //don't entirely understand why this works yet
+          //establishes an array of character variables "c" comprised of the characters in the string word
+          //I'm not sure why the modulo is in there
           String output = "";
           for (char c: word.toCharArray()) {
               output += Character.toString((char) (((c - 'a' + 3) % 26) + 'a'));
