@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,8 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        String result = baseValue + valueToBeAdded;
+        return result;
     }
 
     /**
@@ -22,7 +23,8 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        String result = new StringBuffer(valueToBeReversed).reverse().toString();
+        return result;
     }
 
     /**
@@ -30,7 +32,9 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        int i = word.length() / 2;
+        char result = word.charAt(i);
+        return result;
     }
 
     /**
@@ -39,7 +43,12 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        //come back to this one
+        //nevermind, got it to work - probably not the prettiest solution though
+        //revisit to clean up if I have time leftover
+        String foo = Character.toString(charToRemove);
+        String result = value.replaceAll(foo, "");
+        return result;
     }
 
     /**
@@ -47,6 +56,12 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        //start at the end of the string and move backwards until I find a space
+        //move forwards one
+        //return the remainder of the string
+        String result = sentence.substring(sentence.lastIndexOf(" ")+1);
+        return result;
+        //this works for all test cases, but it wouldn't work for a single word
+        //if time, revisit for test cases not used
     }
 }
